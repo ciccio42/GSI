@@ -93,7 +93,7 @@ main(int argc, const char * argv[])
 		//be occupied very much because it not really released.
 		//We can use cudaDeviceReset() to reset the device with process to release memory, but this will introduce 
 		//more initialization time.
-		//cudaDeviceReset();
+		cudaDeviceReset();
 		}
         long end = Util::get_cur_time();
         cerr<<"match used: "<<(end-start)<<" ms"<<endl;
@@ -120,4 +120,3 @@ main(int argc, const char * argv[])
 
 	return 0;
 }
-

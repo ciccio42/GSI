@@ -864,16 +864,16 @@ second_kernel(unsigned* d_result_tmp, unsigned* d_result_tmp_num)
         for(unsigned stride = 1; stride < 32; stride <<= 1)
         {
             //NOTICE: this must be called by the whole warp, not placed in the judgement
-            unsigned tmp = __shfl_up(presum, stride);
+            unsigned tmp = __shfl_up_sync(0xFFFFFFFF, presum, stride);
             if(idx >= stride)
             {
                 presum += tmp;
             }
         }
         //this must be called first, only in inclusive-scan the 31-th element is the sum
-        unsigned total = __shfl(presum, 31);  //broadcast to all threads in the warp
+        unsigned total = __shfl_sync(0xFFFFFFFF, presum, 31);  //broadcast to all threads in the warp
         //transform inclusive prefixSum to exclusive prefixSum
-        presum = __shfl_up(presum, 1);
+        presum = __shfl_up_sync(0xFFFFFFFF, presum, 1);
         //NOTICE: for the first element, the original presum value is copied
         if(idx == 0)
         {
@@ -935,14 +935,14 @@ second_kernel(unsigned* d_result_tmp, unsigned* d_result_tmp_num)
     }
     for(unsigned stride = 1; stride < 32; stride <<= 1)
     {
-        unsigned tmp = __shfl_up(presum, stride);
+        unsigned tmp = __shfl_up_sync(0xFFFFFFFF, presum, stride);
         if(idx >= stride)
         {
             presum += tmp;
         }
     }
-    unsigned total = __shfl(presum, 31);  //broadcast to all threads in the warp
-    presum = __shfl_up(presum, 1);
+    unsigned total = __shfl_sync(0xFFFFFFFF, presum, 31);  //broadcast to all threads in the warp
+    presum = __shfl_up_sync(0xFFFFFFFF, presum, 1);
     if(idx == 0)
     {
         presum = 0;
@@ -1085,14 +1085,14 @@ join_kernel(unsigned* d_result_tmp, unsigned* d_result_tmp_num)
         presum = pred;
         for(unsigned stride = 1; stride < 32; stride <<= 1)
         {
-            unsigned tmp = __shfl_up(presum, stride);
+            unsigned tmp = __shfl_up_sync(0xFFFFFFFF, presum, stride);
             if(idx >= stride)
             {
                 presum += tmp;
             }
         }
-        unsigned total = __shfl(presum, 31);  //broadcast to all threads in the warp
-        presum = __shfl_up(presum, 1);
+        unsigned total = __shfl_sync(0xFFFFFFFF, presum, 31);  //broadcast to all threads in the warp
+        presum = __shfl_up_sync(0xFFFFFFFF, presum, 1);
         if(idx == 0)
         {
             presum = 0;
