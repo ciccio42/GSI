@@ -117,12 +117,20 @@ Graph::buildSignature(bool column_oriented)
             t = t | c;
             signature_table[signum*i+1+a] = t;
         }
-        //for(int k = 0; k < 16; ++k)
+        cout << "Signature for vertex " << i << ": ";
+        
+        //for (int k = 0; k < signum; ++k)
         //{
-            //Util::DisplayBinary(signature_table[signum*i+k]);
-            //cout<<" ";
+        //    cout << signature_table[signum*i + k] << " ";
         //}
-        //cout<<endl;
+        //cout << endl;
+        
+        for(int k = 0; k < 16; ++k)
+        {
+            Util::DisplayBinary(signature_table[signum*i+k]);
+            cout<<" ";
+        }
+        cout<<endl;
     }
 
     if(column_oriented)
