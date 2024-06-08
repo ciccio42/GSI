@@ -32,13 +32,14 @@ using namespace std;
 
 //NOTICE: if we use too many checkCudaErrors in the program, then it may report error:
 //too many resources requested for launch cudaGetLastError()
-/*#define DEBUG 1*/
+//#define DEBUG 1
 #define MAXIMUM_SCORE 100000000.0f
 //! the maximum degree in the query graph, used for linking structures
 #define MAX_DEGREE 20
 #define SUMMARY_SIZE 2*1024  //2048 unsigneds=8KB
 #define SUMMARY_BYTES SUMMARY_SIZE*4 //8KB
 #define SUMMARY_BITS SUMMARY_BYTES*8 //8KB=1024*64bits
+#define MAX_QUERY_SIZE 50
 
 //GPU上用new/delete大量处理小内存的性能会比较差
 //如果中间表实在太大(可能最终结果本身就很多)，那么需要考虑分段或者中间表结构的压缩(是否可以按列存?)
@@ -65,18 +66,18 @@ __constant__ unsigned c_link_edge;
 __constant__ unsigned c_signature[SIGNUM];
 
 void 
-Match::initGPU(int dev)
+Match::initGPU(int dev, bool verbose)
 {
     int deviceCount;
     cudaGetDeviceCount(&deviceCount);
-    if (deviceCount == 0) {
+    if (deviceCount == 0 && verbose) {
         fprintf(stderr, "error: no devices supporting CUDA.\n");
         exit(EXIT_FAILURE);
     }
     cudaSetDevice(dev);
 	//NOTE: 48KB shared memory per block, 1024 threads per block, 30 SMs and 128 cores per SM
     cudaDeviceProp devProps;
-    if (cudaGetDeviceProperties(&devProps, dev) == 0)
+    if (cudaGetDeviceProperties(&devProps, dev) == 0 && verbose)
     {
         printf("Using device %d:\n", dev);
         printf("%s; global mem: %luB; compute v%d.%d; clock: %d kHz; shared mem: %dB; block threads: %d; SM count: %d\n",
@@ -85,7 +86,9 @@ Match::initGPU(int dev)
                (int)devProps.clockRate,
 			   devProps.sharedMemPerBlock, devProps.maxThreadsPerBlock, devProps.multiProcessorCount);
     }
-	cout<<"GPU selected"<<endl;
+    if(verbose){
+	   cout<<"GPU selected"<<endl;
+    }
 	//GPU initialization needs several seconds, so we do it first and only once
 	//https://devtalk.nvidia.com/default/topic/392429/first-cudamalloc-takes-long-time-/
 	int* warmup = NULL;
@@ -97,7 +100,9 @@ Match::initGPU(int dev)
     //However, we do not need to add this synchronized function if we do not want to time the API calls
 	cudaMalloc(&warmup, sizeof(int));
 	cudaFree(warmup);
-	cout<<"GPU warmup finished"<<endl;
+    if(verbose){
+	   cout<<"GPU warmup finished"<<endl;
+    }
     //heap corruption for 3 and 4
 	/*size_t size = 0x7fffffff;*/    //size_t is unsigned long in x64
     unsigned long size = 0x7fffffff;   //approximately 2G
@@ -107,7 +112,9 @@ Match::initGPU(int dev)
 	//NOTICE: the memory alloced by cudaMalloc is different from the GPU heap(for new/malloc in kernel functions)
 	/*cudaDeviceSetLimit(cudaLimitMallocHeapSize, size);*/
 	cudaDeviceGetLimit(&size, cudaLimitMallocHeapSize);
-	cout<<"check heap limit: "<<size<<endl;
+    if(verbose){
+	   cout<<"check heap limit: "<<size<<endl;
+    }
 
 	// Runtime API
 	// cudaFuncCachePreferShared: shared memory is 48 KB
@@ -237,10 +244,6 @@ Match::add_mapping(int _id)
 {
 	pos2id[current_pos] = _id;
 	id2pos[_id] = current_pos;
-
-    //cout<<"pos2id"<<pos2id[current_pos]<<endl;
-    //cout<<"id2pos"<<id2pos[_id]<<endl;
-
 	this->current_pos++;
 }
 
@@ -305,6 +308,7 @@ Match::get_minimum_idx(float* score, int qsize)
 	checkCudaErrors(cudaGetLastError());
 #endif
 
+    /*
     // Print the contents of pos2id
     std::cout << "pos2id contents: ";
     for (int i = 0; i < this->current_pos; ++i)
@@ -312,8 +316,7 @@ Match::get_minimum_idx(float* score, int qsize)
         std::cout << pos2id[i] << " ";
     }
     std::cout << std::endl;
-
-
+    */
 
 	this->add_mapping(min_idx);
 	return min_idx;
@@ -324,7 +327,7 @@ Match::copyGraphToGPU()
 {
     //BETTER: we may not include this time for final comparison because it only needs once
 
-	/*cout<<"to copy graph"<<endl;*/
+	//cout<<"to copy graph"<<endl;
 	//cudaMemcpyFromSymbol    cudaMemcpy + cudaGetSymbolAddress
 	/*cudaMemcpyToSymbol(c_data_row_offset_in, &d_data_row_offset_in, sizeof(unsigned*));*/
 	/*cudaMemcpyToSymbol(c_data_edge_value_in, &d_data_edge_value_in, sizeof(unsigned*));*/
@@ -471,11 +474,31 @@ filter_kernel(unsigned* d_signature_table, unsigned* d_status, unsigned dsize)
 		return; 
 	}
     unsigned flag = 1;
+
+    char usig_binary[33]; // Buffer to hold the binary string representation
+    char vsig_binary[33]; // Buffer to hold the binary string representation
+
     //TODO+DEBUG: the first vertex label, should be checked via a==b
     for(int j = 0; j < SIGNUM; ++j)
     {
         unsigned usig = c_signature[j];
         unsigned vsig = d_signature_table[dsize*j+i];
+
+        // Convert usig to binary string
+        for (int k = 0; k < 32; ++k) {
+            usig_binary[31 - k] = (usig & (1 << k)) ? '1' : '0';
+        }
+        usig_binary[32] = '\0';
+
+        // Convert vsig to binary string
+        for (int k = 0; k < 32; ++k) {
+            vsig_binary[31 - k] = (vsig & (1 << k)) ? '1' : '0';
+        }
+        vsig_binary[32] = '\0';
+
+        // Print binary strings
+        //printf("Thread %d: usig = %s, vsig = %s, flag = %u\n", i, usig_binary, vsig_binary, flag);
+
         //BETTER: reduce memory access here?
         if(flag)
         {
@@ -519,10 +542,36 @@ Match::filter(float* _score, int* _qnum)
     cudaMalloc(&d_status, sizeof(unsigned)*(dsize+1));
     int BLOCK_SIZE = 1024;
 	int GRID_SIZE = (dsize+BLOCK_SIZE-1)/BLOCK_SIZE;
+
+    /*
+    // Print query signature table in binary
+    cout << "Query signature table (binary):" << endl;
+    for (int i = 0; i < qsize * SIGNUM; ++i) {
+        cout << bitset<32>(this->query->signature_table[i]) << " ";
+        if ((i + 1) % SIGNUM == 0) cout << endl;
+    }
+
+    // Print data signature table in binary
+    cout << "Data signature table (binary):" << endl;
+    for (int i = 0; i < dsize * SIGNUM; ++i) {
+        cout << bitset<32>(this->data->signature_table[i]) << " ";
+        if ((i + 1) % SIGNUM == 0) cout << endl;
+    }
+    */
+
     for(int i = 0; i < qsize; ++i)
     {   
         // Store the signature of the query graph in constant memory
         cudaMemcpyToSymbol(c_signature, this->query->signature_table + SIGNUM * i, SIGBYTE);
+
+        /*
+        // Print the signature being copied to constant memory
+        cout << "Signature for vertex " << i << " being copied to constant memory (binary): ";
+        for (int j = 0; j < SIGNUM; ++j) {
+            cout << bitset<32>(this->query->signature_table[SIGNUM * i + j]) << " ";
+        }
+        cout << endl;
+        */
 
         // Launch filter kernel
         filter_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_signature_table, d_status, dsize);
@@ -530,21 +579,24 @@ Match::filter(float* _score, int* _qnum)
         checkCudaErrors(cudaGetLastError());
 
 
-
+        /*                
         // Print d_status before exclusive sum
         unsigned* h_status_before = new unsigned[dsize + 1];
-        cudaMemcpy(h_status_before, d_status, sizeof(unsigned) * (dsize + 1), cudaMemcpyDeviceToHost);
-        cout << "d_status before exclusive sum: ";
-        for (int j = 0; j < dsize + 1; ++j) {
+        cudaMemcpy(h_status_before, d_status, sizeof(unsigned) * (dsize), cudaMemcpyDeviceToHost);
+        cout << "Vertex "<< i << ": "<< "d_status before exclusive sum: ";
+        for (int j = 0; j < dsize; ++j) {
             cout << h_status_before[j] << " ";
         }
         cout << endl;
         delete[] h_status_before;
+        */
 
         // Perform exclusive sum
         exclusive_sum(d_status, dsize + 1);
+        cudaDeviceSynchronize();
         checkCudaErrors(cudaGetLastError());
 
+        /*
         // Print d_status after exclusive sum
         unsigned* h_status_after = new unsigned[dsize + 1];
         cudaMemcpy(h_status_after, d_status, sizeof(unsigned) * (dsize + 1), cudaMemcpyDeviceToHost);
@@ -554,12 +606,13 @@ Match::filter(float* _score, int* _qnum)
         }
         cout << endl;
         delete[] h_status_after;
+        */
 
         // Copy the number of candidates from the device to the host
         cudaMemcpy(&_qnum[i], d_status + dsize, sizeof(unsigned), cudaMemcpyDeviceToHost);
 
         // Debug print for the number of candidates
-        cout << "Number of candidates for vertex " << i << ": " << _qnum[i] << endl;
+        //cout << "Number of candidates for vertex " << i << ": " << _qnum[i] << endl;
 
         // Break if no candidates are found
         if (_qnum[i] == 0) {
@@ -586,12 +639,13 @@ Match::filter(float* _score, int* _qnum)
 	//get the num of candidates and compute scores
 	bool success = score_node(_score, _qnum);
 
+    /*
     // Print scores
     cout << "Scores for each vertex in the query graph:" << endl;
     for (int i = 0; i < qsize; ++i) {
         cout << "Vertex " << i << " score: " << _score[i] << endl;
     }
-
+    */
     // print qnum
 
 
@@ -664,9 +718,9 @@ Match::acquire_linking(int*& link_pos, int*& link_edge, int& link_num, int idx)
 	int i, qsize = this->query->vertex_num;
     int insize = this->query->vertices[idx].in.size(), outsize = this->query->vertices[idx].out.size();
 
-    cout<<"INSIZE"<<insize<<endl;
-    cout<<"OUTSIZE"<<outsize<<endl;
-    cout<<"current_pos"<<this->current_pos<<endl;
+    //cout<<"INSIZE"<<insize<<endl;
+    //cout<<"OUTSIZE"<<outsize<<endl;
+    //cout<<"current_pos"<<this->current_pos<<endl;
 
 	//BETTER: deal with parallel edge
     //WARN: currently, for parallel edge(general meaning) only the last is dealed
@@ -680,22 +734,23 @@ Match::acquire_linking(int*& link_pos, int*& link_edge, int& link_num, int idx)
         edge2value[vid] = label;
 	}
 
+    /*
     // Print the contents of edge2value after processing in-neighbors
     std::cout << "edge2value after processing in-neighbors: ";
     for (int i = 0; i < qsize; ++i) {
         std::cout << edge2value[i] << " ";
     }
     std::cout << std::endl;
+    */
 
 	for(i = 0; i < this->current_pos; ++i)
 	{
 		int id = this->pos2id[i];
-        cout<<"i: "<< i<<" ID: "<< id<<endl;
+        //cout<<"i: "<< i<<" ID: "<< id<<endl;
 		int label = edge2value[id];
-        cout<<"LABEL: " <<label<<endl;
+        //cout<<"LABEL: " <<label<<endl;
 		if(label != -1)
 		{
-            cout<<"TEST-IN"<<endl;
 			tmp_vertex.push_back(i);
 			tmp_edge.push_back(label);
 		}
@@ -709,13 +764,14 @@ Match::acquire_linking(int*& link_pos, int*& link_edge, int& link_num, int idx)
         edge2value[vid] = label;
 	}
 
+    /*
     // Print the contents of edge2value after processing in-neighbors
     std::cout << "edge2value after processing out-neighbors: ";
     for (int i = 0; i < qsize; ++i) {
         std::cout << edge2value[i] << " ";
     }
     std::cout << std::endl;
-
+    */
 
 	for(i = 0; i < this->current_pos; ++i)
 	{
@@ -723,7 +779,6 @@ Match::acquire_linking(int*& link_pos, int*& link_edge, int& link_num, int idx)
 		int label = edge2value[id];
 		if(label != -1)
 		{
-            cout<<"TEST-OUT"<<endl;
 			tmp_vertex.push_back(i);
 			tmp_edge.push_back(0 - label);
 		}
@@ -828,6 +883,7 @@ first_kernel(unsigned* d_result_tmp_pos)
         s_pool2[bgroup] = INVALID;
         s_pool2[bgroup+1] = INVALID;
     }
+    __syncthreads();
     if(idx < 30 && (idx&1)==0)
     {
         if(s_pool1[bgroup+idx] == id)
@@ -836,6 +892,7 @@ first_kernel(unsigned* d_result_tmp_pos)
             s_pool2[bgroup+1] = s_pool1[bgroup+idx+3];
         }
     }
+    //__syncthreads();
     /*if(pool2[bgroup*32] == INVALID && pool1[32*bgroup+30] != INVALID)*/
     /*{*/
         /*//TODO:multiple groups*/
@@ -1237,8 +1294,6 @@ join_kernel(unsigned* d_result_tmp, unsigned* d_result_tmp_num)
         {
             pos2 += 32;
         }
-
-        __syncthreads(); // Synchronize before the next iteration
     }
 
     if (idx < s_pool4[gidx])
@@ -1411,7 +1466,7 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
         cout<<"now to do join kernel "<<result_row_num<<" "<<result_col_num<<" "<<GRID_SIZE<<" "<<BLOCK_SIZE<<endl;
 #endif
     //NOTICE: we ensure that link_num > 0
-	long begin = Util::get_cur_time();
+	//long begin = Util::get_cur_time();
     for(int i = 0; i < link_num; ++i)
     {
         cudaMemcpyToSymbol(c_link_pos, link_pos+i, sizeof(unsigned));
@@ -1434,7 +1489,7 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
         cudaMemcpyToSymbol(c_key_num, &(tcsr->key_num), sizeof(unsigned));
         cudaMemcpyToSymbol(c_link_edge, &label, sizeof(unsigned));
         cudaMemcpyToSymbol(c_result_tmp_pos, &d_result_tmp_pos, sizeof(unsigned*));
-        cout<<"the "<<i<<"-th edge"<<endl;
+        //cout<<"the "<<i<<"-th edge"<<endl;
 
         //BETTER: handle infrequent edge first to lower the size of d_result_tmp
         if(i == 0)
@@ -1442,9 +1497,10 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
             first_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_result_tmp_pos);
             cudaDeviceSynchronize();
             checkCudaErrors(cudaGetLastError());
-            cout<<"first kernel finished"<<endl;
+            //cout<<"first kernel finished"<<endl;
 
 
+            /*
             // Print the contents of d_result_tmp_pos
             unsigned* h_result_tmp_pos = new unsigned[result_row_num];
             cudaMemcpy(h_result_tmp_pos, d_result_tmp_pos, sizeof(unsigned) * (result_row_num), cudaMemcpyDeviceToHost);
@@ -1456,11 +1512,12 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
             delete[] h_result_tmp_pos;
             
             cout<<"result row num: "<<result_row_num<<endl;
-
+            */
             /*thrust::device_ptr<unsigned> dev_ptr(d_result_tmp_pos);*/
             /*thrust::exclusive_scan(dev_ptr, dev_ptr+result_row_num+1, dev_ptr);*/
             exclusive_sum(d_result_tmp_pos, result_row_num+1);
-
+            cudaDeviceSynchronize();
+            /*
             // Print the contents of d_result_tmp_pos
             unsigned* b_result_tmp_pos = new unsigned[result_row_num + 1];
             cudaMemcpy(b_result_tmp_pos, d_result_tmp_pos, sizeof(unsigned) * (result_row_num + 1), cudaMemcpyDeviceToHost);
@@ -1470,16 +1527,17 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
             }
             std::cout << std::endl;
             delete[] b_result_tmp_pos;
-
+            */
             cudaMemcpy(&sum, &d_result_tmp_pos[result_row_num], sizeof(unsigned), cudaMemcpyDeviceToHost);
-            cout<<"To malloc on GPU: "<<sizeof(unsigned)*sum<<endl;
+            //cout<<"To malloc on GPU: "<<sizeof(unsigned)*sum<<endl;
             assert(sum < 2000000000);  //keep the bytes < 8GB
             cudaMalloc(&d_result_tmp, sizeof(unsigned)*sum);
             checkCudaErrors(cudaGetLastError());
             
-            //  ERROR PROBABLY IN HERE???
             second_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_result_tmp, d_result_tmp_num);
-            
+            cudaDeviceSynchronize();
+
+            /*
             unsigned* h_result_tmp = new unsigned[sum];
             cudaMemcpy(h_result_tmp, d_result_tmp, sizeof(unsigned)*sum, cudaMemcpyDeviceToHost);
             for(int p = 0; p < sum; ++p)
@@ -1488,7 +1546,6 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
             }
             cout<<endl;
 
-            //code goes here
             unsigned* h_result_tmp_num = new unsigned[result_row_num];
             cudaMemcpy(h_result_tmp_num, d_result_tmp_num, sizeof(unsigned) * result_row_num, cudaMemcpyDeviceToHost);
             cout << "Contents of d_result_tmp_num:" << endl;
@@ -1500,20 +1557,21 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
 
             delete[] h_result_tmp;
             delete[] h_result_tmp_num;
-
+            */
         }
         else
         {
             join_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_result_tmp, d_result_tmp_num);
+            cudaDeviceSynchronize();
         }
-        cudaDeviceSynchronize();
+        //cudaDeviceSynchronize();
         checkCudaErrors(cudaGetLastError());
-        cout<<"iteration kernel finished"<<endl;
+        //cout<<"iteration kernel finished"<<endl;
         cudaFree(d_row_offset);
         cudaFree(d_column_index);
     }
-	long end = Util::get_cur_time();
-	cerr<<"join_kernel used: "<<(end-begin)<<"ms"<<endl;
+	//long end = Util::get_cur_time();
+	//cerr<<"join_kernel used: "<<(end-begin)<<"ms"<<endl;
 #ifdef DEBUG
 	cout<<"join kernel finished"<<endl;
 #endif
@@ -1522,6 +1580,7 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
 	/*//link the temp result into a new table*/
 	/*thrust::exclusive_scan(dev_ptr, dev_ptr+result_row_num+1, dev_ptr);*/
     exclusive_sum(d_result_tmp_num, result_row_num+1);
+    cudaDeviceSynchronize();
 #ifdef DEBUG
 	checkCudaErrors(cudaGetLastError());
 #endif
@@ -1549,11 +1608,11 @@ Match::join(unsigned* d_summary, int* link_pos, int* link_edge, int link_num, un
 		/*BLOCK_SIZE = 512;*/
 		/*GRID_SIZE = (result_row_num+BLOCK_SIZE-1)/BLOCK_SIZE;*/
 		//BETTER?: combine into a large array(value is the record id) and link per element
-		long begin = Util::get_cur_time();
+		//long begin = Util::get_cur_time();
 		link_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_result_tmp, d_result_tmp_pos, d_result_tmp_num, d_result_new);
-		checkCudaErrors(cudaGetLastError());
+		//checkCudaErrors(cudaGetLastError());
 		cudaDeviceSynchronize();
-		long end = Util::get_cur_time();
+		//long end = Util::get_cur_time();
 #ifdef DEBUG
 		cerr<<"link_kernel used: "<<(end-begin)<<"ms"<<endl;
 #endif
@@ -1611,7 +1670,8 @@ bloom_kernel(unsigned* d_array, unsigned candidate_num, unsigned* d_summary)
 }
 
 void 
-Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned& result_col_num, int*& id_map)
+//Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned& result_col_num, int*& id_map)
+Match::match(unsigned*& final_result, unsigned& result_row_num, unsigned& result_col_num, int*& id_map)
 {
 //NOTICE: device variables can not be assigned and output directly on Host
 /*unsigned maxTaskLen = 0, minTaskLen = 1000000;*/
@@ -1622,16 +1682,16 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 /*cudaGetSymbolAddress((void**)&dp,devData);*/
 /*cudaMemcpy(dp,&value,sizeof(float),cudaMemcpyHostToDevice);*/
 
-	long t0 = Util::get_cur_time();
+	//long t0 = Util::get_cur_time();
 	copyGraphToGPU();
-	long t1 = Util::get_cur_time();
-	cerr<<"copy graph used: "<<(t1-t0)<<"ms"<<endl;
+	//long t1 = Util::get_cur_time();
+    //cerr<<"copy graph used: "<<(t1-t0)<<"ms"<<endl;
 #ifdef DEBUG
-	cout<<"graph copied to GPU"<<endl;
+	//cout<<"graph copied to GPU"<<endl;
 #endif
 
 	int qsize = this->query->vertex_num;
-    assert(qsize <= 12);
+    assert(qsize <= MAX_QUERY_SIZE);
 	float* score = new float[qsize];
 	/*float* d_score = NULL;*/
 	/*cudaMalloc(&d_score, sizeof(float)*qsize);*/
@@ -1644,19 +1704,20 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 	/*checkCudaErrors(cudaGetLastError());*/
 	/*cout<<"assign d_qnum"<<endl;*/
 
-	/*cout<<"to filter"<<endl;*/
+	//cout<<"to filter"<<endl;
 	bool success = filter(score, qnum);
-	long t2 = Util::get_cur_time();
-	cout<<"filter used: "<<(t2-t1)<<"ms"<<endl;
+	//long t2 = Util::get_cur_time();
+	//cout<<"filter used: "<<(t2-t1)<<"ms"<<endl;
 
 
+    /*
     cout<<"Number of candidates for each vertex in query"<<endl;
 
     for(int i = 0; i < qsize; ++i)
     {
         cout<<qnum[i]<<" ";
     }cout<<endl;
-
+    */
 
 
 
@@ -1675,7 +1736,7 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 	}
 
     unsigned bitset_size = sizeof(unsigned) * Util::RoundUpDivision(this->data->vertex_num, sizeof(unsigned)*8);
-    cout<<"data vertex num: "<<this->data->vertex_num<<" bitset size: "<<bitset_size<<"B"<<endl;
+    //cout<<"data vertex num: "<<this->data->vertex_num<<" bitset size: "<<bitset_size<<"B"<<endl;
     //NOTICE: the bitset is very large, we should only keep one set at a time
     unsigned* d_candidate = NULL;  //candidate bitset
     cudaMalloc(&d_candidate, bitset_size);
@@ -1695,8 +1756,8 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 	checkCudaErrors(cudaGetLastError());
 	cout<<"candidates prepared"<<endl;
 #endif
-	long t3 = Util::get_cur_time();
-	cerr<<"build candidates used: "<<(t3-t2)<<"ms"<<endl;
+	//long t3 = Util::get_cur_time();
+	//cerr<<"build candidates used: "<<(t3-t2)<<"ms"<<endl;
 
 	//initialize the mapping structure
 	this->id2pos = new int[qsize];
@@ -1706,30 +1767,32 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 	memset(pos2id, -1, sizeof(int)*qsize);
 	//select the minium score and fill the table
 
-    cout<<"Current pos 1: "<<this->current_pos<<endl;
+    //cout<<"Current pos 1: "<<this->current_pos<<endl;
 
 	int idx = this->get_minimum_idx(score, qsize);
-	cout<<"start node found: "<<idx<<" "<<this->query->vertex_value[idx]<<" candidate size: "<<qnum[idx]<<endl;
+	//cout<<"start node found: "<<idx<<" "<<this->query->vertex_value[idx]<<" candidate size: "<<qnum[idx]<<endl;
 
-    cout<<"Current pos 2: "<<this->current_pos<<endl;
+    //cout<<"Current pos 2: "<<this->current_pos<<endl;
 
 
 	//intermediate table of join results
 	result_row_num = qnum[idx];
 	result_col_num = 1;
 	unsigned* d_result = this->candidates[idx];  
-	cout<<"intermediate table built"<<endl;
+	//cout<<"intermediate table built"<<endl;
 
     // Print the intermediate table
     unsigned* h_intermediate_result = new unsigned[result_row_num];
     cudaMemcpy(h_intermediate_result, d_result, sizeof(unsigned) * result_row_num, cudaMemcpyDeviceToHost);
 
+    /*
     // Print the intermediate table contents
     std::cout << "Intermediate Table:" << std::endl;
     for (unsigned i = 0; i < result_row_num; ++i) {
         std::cout << h_intermediate_result[i] << " ";
     }
     std::cout << std::endl;
+    */
 
     // Clean up host memory
     delete[] h_intermediate_result;
@@ -1739,27 +1802,27 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 	for(int step = 1; step < qsize; ++step)
 	{
 /*#ifdef DEBUG*/
-		cout<<"this is the "<<step<<" round"<<endl;
+		//cout<<"this is the "<<step<<" round"<<endl;
 /*#endif*/
 
-        long t4 = Util::get_cur_time();
+        //long t4 = Util::get_cur_time();
         // update the scores of query nodes
         update_score(score, qsize, idx);
-        long t5 = Util::get_cur_time();
-        cerr<<"update score used: "<<(t5-t4)<<"ms"<<endl;
+        //long t5 = Util::get_cur_time();
+        //cerr<<"update score used: "<<(t5-t4)<<"ms"<<endl;
 
-        cout<<"Current pos 3: "<<this->current_pos<<endl;
+        //cout<<"Current pos 3: "<<this->current_pos<<endl;
 
         int idx2 = this->get_minimum_idx(score, qsize);
-        long t6 = Util::get_cur_time();
-        cerr<<"get minimum idx used: "<<(t6-t5)<<"ms"<<endl;
+        //long t6 = Util::get_cur_time();
+        //cerr<<"get minimum idx used: "<<(t6-t5)<<"ms"<<endl;
     /*#ifdef DEBUG*/
-        cout<<"next node to join: "<<idx2<<" "<<this->query->vertex_value[idx2]<<" candidate size: "<<qnum[idx2]<<endl;
+        //cout<<"next node to join: "<<idx2<<" "<<this->query->vertex_value[idx2]<<" candidate size: "<<qnum[idx2]<<endl;
     /*#endif*/
 
-        cout<<"Current pos 4: "<<this->current_pos<<endl;
+        //cout<<"Current pos 4: "<<this->current_pos<<endl;
 
-
+        /*
         // Print the contents of pos2id and id2pos before acquiring linkings
         std::cout << "pos2id before acquiring linkings: ";
         for (int i = 0; i < this->current_pos; ++i) {
@@ -1772,14 +1835,14 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
             std::cout << this->id2pos[i] << " ";
         }
         std::cout << std::endl;
-
+        */
 
 
 		//acquire the edge linkings on CPU, and pass to GPU
 		int *link_pos, *link_edge, link_num;
 		this->acquire_linking(link_pos, link_edge, link_num, idx2);
 
-
+        /*
         // Display link_pos, link_edge, and link_num
         std::cout << "link_num: " << link_num << std::endl;
 
@@ -1794,18 +1857,21 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
             std::cout << link_edge[i] << " ";
         }
         std::cout << std::endl;
+        */
 
-        long t7 = Util::get_cur_time();
-        cerr<<"acquire linking used: "<<(t7-t6)<<"ms"<<endl;
+        //long t7 = Util::get_cur_time();
+        //cerr<<"acquire linking used: "<<(t7-t6)<<"ms"<<endl;
 
-        long tmp1 = Util::get_cur_time();
+        //long tmp1 = Util::get_cur_time();
         //build the bitset
-		checkCudaErrors(cudaGetLastError());
+		//checkCudaErrors(cudaGetLastError());
         cudaMemset(d_candidate, 0, bitset_size);
-		checkCudaErrors(cudaGetLastError());
+		//checkCudaErrors(cudaGetLastError());
 
-        // Print the contents of candidates[idx2] before candidate_kernel
         int candidate_num = qnum[idx2];
+
+        /*
+        // Print the contents of candidates[idx2] before candidate_kernel
         std::cout << "Contents of candidates[idx2] before candidate_kernel: ";
         unsigned* h_candidates = new unsigned[candidate_num];
         cudaMemcpy(h_candidates, this->candidates[idx2], sizeof(unsigned) * candidate_num, cudaMemcpyDeviceToHost);
@@ -1814,12 +1880,14 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
         }
         std::cout << std::endl;
         delete[] h_candidates;
+        */
 
         candidate_kernel<<<Util::RoundUpDivision(candidate_num, 1024), 1024>>>(d_candidate, this->candidates[idx2], candidate_num);
-		checkCudaErrors(cudaGetLastError());
+		//checkCudaErrors(cudaGetLastError());
         cudaDeviceSynchronize();
-		checkCudaErrors(cudaGetLastError());
+		//checkCudaErrors(cudaGetLastError());
         
+        /*
         unsigned* h_candidate_bitset = new unsigned[bitset_size / sizeof(unsigned)];
         cudaMemcpy(h_candidate_bitset, d_candidate, bitset_size, cudaMemcpyDeviceToHost);
         std::cout << "Contents of d_candidate after candidate_kernel: ";
@@ -1828,10 +1896,10 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
         }
         std::cout << std::endl;
         delete[] h_candidate_bitset;
+        */
 
-
-        long tmp2 = Util::get_cur_time();
-        cout<<"candidate kernel used: "<<(tmp2-tmp1)<<"ms"<<endl;
+        //long tmp2 = Util::get_cur_time();
+        //cout<<"candidate kernel used: "<<(tmp2-tmp1)<<"ms"<<endl;
 
         //build summary which is placed in read-only cache: the summary is groups of 8B=64 bits
         //cudaMemset(d_summary, 0, SUMMARY_BYTES);   //NOTICE: this is needed for each iteration*/
@@ -1843,11 +1911,11 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
         /*bitmap_kernel<<<Util::RoundUpDivision(bitset_size, 1024), 1024>>>(d_candidate, bitset_size, d_summary);*/
         //METHOD 3: Interval Summary
 		//checkCudaErrors(cudaGetLastError());//*/
-        long tmp3 = Util::get_cur_time();//*/
-        cout<<"build summary used: "<<(tmp3-tmp2)<<"ms"<<endl;//*/
+        //long tmp3 = Util::get_cur_time();//*/
+        //cout<<"build summary used: "<<(tmp3-tmp2)<<"ms"<<endl;//*/
 
         cudaFree(this->candidates[idx2]);
-		checkCudaErrors(cudaGetLastError());
+		//checkCudaErrors(cudaGetLastError());
 		//join the intermediate table with a candidate list
         //BETTER: use segmented join if the table is too large!
 		success = this->join(d_summary, link_pos, link_edge, link_num, d_result, d_candidate, candidate_num, result_row_num, result_col_num);
@@ -1862,7 +1930,7 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 			break;
 		}
 		idx = idx2;
-		cout<<"intermediate table: "<<result_row_num<<" "<<result_col_num<<endl;
+		//cout<<"intermediate table: "<<result_row_num<<" "<<result_col_num<<endl;
 	}
 
 #ifdef DEBUG
@@ -1873,15 +1941,25 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
     cudaFree(d_candidate);
     /*checkCudaErrors(cudaFree(d_summary));*/
 
-	long t8 = Util::get_cur_time();
+	//long t8 = Util::get_cur_time();
 	//transfer the result to CPU and output
 	if(success)
 	{
+        //cout<<"Successful Isomorphism Found!"<<endl;
 		final_result = new unsigned[result_row_num * result_col_num];
-		cudaMemcpy(final_result, d_result, sizeof(unsigned)*result_col_num*result_row_num, cudaMemcpyDeviceToHost);
-	}
+        cudaMemcpy(final_result, d_result, sizeof(unsigned) * result_col_num * result_row_num, cudaMemcpyDeviceToHost);
+        /*
+        // Print the final result
+        std::cout<<"Final Result:"<<endl;
+        for (unsigned i = 0; i < result_row_num * result_col_num; ++i) {
+            std::cout << final_result[i] << " ";
+        }
+        std::cout << std::endl;
+        */
+    }
 	else
 	{
+        //cout<<"No Isomorphism Found!"<<endl;
 		final_result = NULL;
 		result_row_num = 0;
 		result_col_num = qsize;
@@ -1889,13 +1967,16 @@ Match::match(IO& io, unsigned*& final_result, unsigned& result_row_num, unsigned
 #ifdef DEBUG
 	checkCudaErrors(cudaGetLastError());
 #endif
-	checkCudaErrors(cudaFree(d_result));
-	long t9 = Util::get_cur_time();
-	cerr<<"copy result used: "<<(t9-t8)<<"ms"<<endl;
+	//long t9 = Util::get_cur_time();
+	//cerr<<"copy result used: "<<(t9-t8)<<"ms"<<endl;
+    cudaFree(d_result);
 #ifdef DEBUG
 	checkCudaErrors(cudaGetLastError());
 #endif
-	id_map = this->id2pos;
+
+
+    id_map = this->id2pos;
+
 
 	delete[] score;
 	delete[] qnum;
@@ -1917,4 +1998,3 @@ Match::release()
 	checkCudaErrors(cudaGetLastError());
 #endif
 }
-

@@ -63,7 +63,7 @@
 #include <readline/history.h>
 
 //indicate that in debug mode
-#define DEBUG   1
+//#define DEBUG   FALSE
 
 #define MAX_PATTERN_SIZE 1000000000
 
