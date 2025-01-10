@@ -35,7 +35,7 @@ CC = g++
 #opt-in to caching of global memory accesses in L1 via the -Xptxas -dlcm=ca option to nvcc
 #intermediate files, using --keep for nvcc
 #for PTX codes, using --ptx for nvcc
-NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true -G --ptxas-options=-v -lineinfo -Xcompiler -rdynamic -I ~/cudaToolkit/cub-1.8.0/
+NVCC = nvcc -arch=sm_61 -lcudadevrt -rdc=true --ptxas-options=-v -lineinfo -Xcompiler -fPIC -I /graph-matching-analysis/external_libray/cub-1.8.0/cub
 #NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true -G -Xcompiler -rdynamic -lineinfo
 #CFLAGS = -g -c #-fprofile-arcs -ftest-coverage -coverage #-pg
 #EXEFLAG = -g #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
@@ -43,8 +43,8 @@ NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true -G --ptxas-options=-v -lineinfo -X
 #EXEFLAG = -g #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
 #NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true 
 #CFLAGS = -c #-fprofile-arcs -ftest-coverage -coverage #-pg
-CFLAGS = -c -O2 #-fprofile-arcs -ftest-coverage -coverage #-pg
-EXEFLAG = -O2 #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
+CFLAGS = -c -O0 -g #-fprofile-arcs -ftest-coverage -coverage #-pg
+EXEFLAG = -O0 #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
 # BETTER: try -fno-builtin-strlen -funswitch-loops -finline-functions
 
 #add -lreadline -ltermcap if using readline or objs contain readline
@@ -56,7 +56,7 @@ objfile = $(objdir)Util.o $(objdir)IO.o $(objdir)Match.o $(objdir)Graph.o
 all: GSI.exe
 
 GSI.exe: $(objfile) main/run.cpp
-	$(NVCC) $(EXEFLAG) -o GSI.exe main/run.cpp $(objfile)
+	$(NVCC) $(EXEFLAG) -g -o GSI.exe main/run.cpp $(objfile)
 
 $(objdir)Util.o: util/Util.cpp util/Util.h
 	$(CC) $(CFLAGS) util/Util.cpp -o $(objdir)Util.o
