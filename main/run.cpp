@@ -79,10 +79,10 @@ main(int argc, const char * argv[])
 			Match m(query_list[i], data_graph);
 			io.output(i);
 		/*getchar();*/
-	//long tt1 = Util::get_cur_time();
+			long tt1 = Util::get_cur_time();
 			m.match(io, final_result, result_row_num, result_col_num, id_map);
-	//long tt2 = Util::get_cur_time();
-	//cerr<<"match used: "<<(tt2-tt1)<<"ms"<<endl;
+			long tt2 = Util::get_cur_time();
+			cerr<<"Match returned: "<<(tt2-tt1)<<"ms"<<endl;
 		/*getchar();*/
 			io.output(final_result, result_row_num, result_col_num, id_map);
 			io.flush();

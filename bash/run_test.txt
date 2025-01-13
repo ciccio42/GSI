@@ -1,0 +1,453 @@
+Query: node_induced_connected_query_32.sub.grf - Target string: data.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1402 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 0 24859 candidate size: 1
+Match returned: 1187ms
+result: 2 32
+match used: 1187 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 4146ms
+total time used: 4147ms
+
+######################################
+
+Query: node_induced_connected_query_16.sub.grf - Target string: data.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1452 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 0 24859 candidate size: 1
+Match returned: 408ms
+result: 1 16
+match used: 408 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3663ms
+total time used: 3665ms
+
+######################################
+
+Query: node_induced_connected_query_8.sub.grf - Target string: data.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1421 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 0 24859 candidate size: 1
+Match returned: 282ms
+result: 1 8
+match used: 282 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3285ms
+total time used: 3287ms
+
+######################################
+
+Query: node_induced_connected_query_32_64.sub.grf - Target string: data_64.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1437 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 2 33 candidate size: 1
+Match returned: 1271ms
+result: 1 32
+match used: 1271 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4320ms
+total time used: 4322ms
+
+######################################
+
+Query: node_induced_connected_query_16_64.sub.grf - Target string: data_64.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1429 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 5 9 candidate size: 1
+Match returned: 652ms
+result: 1 16
+match used: 652 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3812ms
+total time used: 3814ms
+
+######################################
+
+Query: node_induced_connected_query_8_64.sub.grf - Target string: data_64.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1434 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 5 9 candidate size: 2
+Match returned: 182ms
+result: 1 8
+match used: 182 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 3227ms
+total time used: 3228ms
+
+######################################
+
+Query: node_induced_connected_query_32_32.sub.grf - Target string: data_32.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1375 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 9 0 candidate size: 1
+Match returned: 1254ms
+result: 1 32
+match used: 1254 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4174ms
+total time used: 4176ms
+
+######################################
+
+Query: node_induced_connected_query_16_32.sub.grf - Target string: data_32.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1472 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 10 0 candidate size: 2
+Match returned: 522ms
+result: 1 16
+match used: 522 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3672ms
+total time used: 3674ms
+
+######################################
+
+Query: node_induced_connected_query_8_32.sub.grf - Target string: data_32.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1539 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 27 candidate size: 25
+Match returned: 151ms
+result: 2 8
+match used: 152 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3265ms
+total time used: 3267ms
+
+######################################
+
+Query: node_induced_connected_query_32_16.sub.grf - Target string: data_16.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1384 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 10 13 candidate size: 6
+Match returned: 1315ms
+result: 1 32
+match used: 1315 ms
+match ended!
+part 1 used: 3ms
+part 2 used: 4208ms
+total time used: 4211ms
+
+######################################
+
+Query: node_induced_connected_query_16_16.sub.grf - Target string: data_16.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1334 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 13 candidate size: 16
+Match returned: 502ms
+result: 3 16
+match used: 502 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3357ms
+total time used: 3359ms
+
+######################################
+
+Query: node_induced_connected_query_8_16.sub.grf - Target string: data_16.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1445 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 13 candidate size: 40
+Match returned: 324ms
+result: 552 8
+match used: 325 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 3396ms
+total time used: 3397ms
+
+######################################
+
+Query: node_induced_connected_query_32_8.sub.grf - Target string: data_8.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1418 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 22 2 candidate size: 168
+Match returned: 1290ms
+result: 8 32
+match used: 1290 ms
+match ended!
+part 1 used: 3ms
+part 2 used: 4341ms
+total time used: 4344ms
+
+######################################
+
+Query: node_induced_connected_query_16_8.sub.grf - Target string: data_8.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1448 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 6 candidate size: 395
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+
+Query: node_induced_connected_query_8_8.sub.grf - Target string: data_8.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1399 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 6 candidate size: 1017
+Match returned: 237ms
+result: 1040895 8
+match used: 2056 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4946ms
+total time used: 4948ms
+
+######################################
+
+Query: node_induced_connected_query_32_4.sub.grf - Target string: data_4.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1416 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 10 3 candidate size: 1159
+GSI.exe: match/Match.cu:1337: bool Match::join(unsigned int*, int*, int*, int, unsigned int*&, unsigned int*, unsigned int, unsigned int&, unsigned int&): Assertion `sum < 2000000000' failed.
+./run_test.sh: line 10:  1066 Aborted                 (core dumped) ./GSI.exe ${TARGET_TEST} ${QUERY_TEST} ${result1}${file1}.txt 0
+
+######################################
+
+Query: node_induced_connected_query_16_4.sub.grf - Target string: data_4.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1333 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 3 candidate size: 1285
+GSI.exe: match/Match.cu:1337: bool Match::join(unsigned int*, int*, int*, int, unsigned int*&, unsigned int*, unsigned int, unsigned int&, unsigned int&): Assertion `sum < 2000000000' failed.
+./run_test.sh: line 10:  1075 Aborted                 (core dumped) ./GSI.exe ${TARGET_TEST} ${QUERY_TEST} ${result1}${file1}.txt 0
+
+######################################
+
+Query: node_induced_connected_query_8_4.sub.grf - Target string: data_4.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1434 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 3 candidate size: 2991
+Match returned: 2077ms
+result: 74856277 8
+match used: 245928 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 248915ms
+total time used: 248916ms
+
+######################################
+
+Query: node_induced_connected_query_32_2.sub.grf - Target string: data_2.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1410 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 22 0 candidate size: 12469
+GSI.exe: match/Match.cu:1337: bool Match::join(unsigned int*, int*, int*, int, unsigned int*&, unsigned int*, unsigned int, unsigned int&, unsigned int&): Assertion `sum < 2000000000' failed.
+./run_test.sh: line 10:  1095 Aborted                 (core dumped) ./GSI.exe ${TARGET_TEST} ${QUERY_TEST} ${result1}${file1}.txt 0
+
+######################################
+
+Query: node_induced_connected_query_16_2.sub.grf - Target string: data_2.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1334 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 1 candidate size: 12508
+GSI.exe: match/Match.cu:1337: bool Match::join(unsigned int*, int*, int*, int, unsigned int*&, unsigned int*, unsigned int, unsigned int&, unsigned int&): Assertion `sum < 2000000000' failed.
+./run_test.sh: line 10:  1104 Aborted                 (core dumped) ./GSI.exe ${TARGET_TEST} ${QUERY_TEST} ${result1}${file1}.txt 0
+
+######################################
+
+Query: node_induced_connected_query_8_2.sub.grf - Target string: data_2.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1425 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 1 candidate size: 15325
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+

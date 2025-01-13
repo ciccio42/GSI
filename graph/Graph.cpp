@@ -49,7 +49,9 @@ Graph::preprocessing(bool column_oriented)
 void
 Graph::buildSignature(bool column_oriented)
 {
+#ifdef DEBUG
     cout<<"build signature for a new graph"<<endl;
+#endif
     //build row oriented signatures for query graph
     unsigned signum = SIGLEN / VLEN;
     unsigned tablen = this->vertex_num * signum;

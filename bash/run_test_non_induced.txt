@@ -1,0 +1,263 @@
+Query: node_induced_connected_query_32.sub.grf - Target string: data.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1489 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 0 24859 candidate size: 1
+Match returned: 1156ms
+result: 2 32
+match used: 1157 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4600ms
+total time used: 4602ms
+
+######################################
+
+Query: node_induced_connected_query_16.sub.grf - Target string: data.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1244 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 0 24859 candidate size: 1
+Match returned: 592ms
+result: 1 16
+match used: 592 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3603ms
+total time used: 3605ms
+
+######################################
+
+Query: node_induced_connected_query_8.sub.grf - Target string: data.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1504 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 0 24859 candidate size: 1
+Match returned: 171ms
+result: 1 8
+match used: 171 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3399ms
+total time used: 3401ms
+
+######################################
+
+Query: node_induced_connected_query_32_64.sub.grf - Target string: data_64.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1512 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 2 33 candidate size: 1
+Match returned: 1304ms
+result: 1 32
+match used: 1304 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4742ms
+total time used: 4744ms
+
+######################################
+
+Query: node_induced_connected_query_16_64.sub.grf - Target string: data_64.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1546 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 5 9 candidate size: 1
+Match returned: 619ms
+result: 1 16
+match used: 619 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4110ms
+total time used: 4112ms
+
+######################################
+
+Query: node_induced_connected_query_8_64.sub.grf - Target string: data_64.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1446 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 5 9 candidate size: 2
+Match returned: 171ms
+result: 1 8
+match used: 171 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3340ms
+total time used: 3342ms
+
+######################################
+
+Query: node_induced_connected_query_32_32.sub.grf - Target string: data_32.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1479 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 9 0 candidate size: 1
+Match returned: 1463ms
+result: 1 32
+match used: 1464 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 5009ms
+total time used: 5010ms
+
+######################################
+
+Query: node_induced_connected_query_16_32.sub.grf - Target string: data_32.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1441 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 10 0 candidate size: 2
+Match returned: 630ms
+result: 1 16
+match used: 630 ms
+match ended!
+part 1 used: 3ms
+part 2 used: 4079ms
+total time used: 4082ms
+
+######################################
+
+Query: node_induced_connected_query_8_32.sub.grf - Target string: data_32.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1458 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 27 candidate size: 25
+Match returned: 239ms
+result: 2 8
+match used: 239 ms
+match ended!
+part 1 used: 5ms
+part 2 used: 3725ms
+total time used: 3730ms
+
+######################################
+
+Query: node_induced_connected_query_32_16.sub.grf - Target string: data_16.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1405 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 10 13 candidate size: 6
+Match returned: 1297ms
+result: 1 32
+match used: 1298 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4073ms
+total time used: 4075ms
+
+######################################
+
+Query: node_induced_connected_query_16_16.sub.grf - Target string: data_16.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1353 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 13 candidate size: 16
+Match returned: 471ms
+result: 3 16
+match used: 471 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 3176ms
+total time used: 3177ms
+
+######################################
+
+Query: node_induced_connected_query_8_16.sub.grf - Target string: data_16.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343

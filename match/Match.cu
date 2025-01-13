@@ -1314,23 +1314,27 @@ bool Match::join(unsigned *d_summary, int *link_pos, int *link_edge, int link_nu
         cudaMemcpyToSymbol(c_key_num, &(tcsr->key_num), sizeof(unsigned));
         cudaMemcpyToSymbol(c_link_edge, &label, sizeof(unsigned));
         cudaMemcpyToSymbol(c_result_tmp_pos, &d_result_tmp_pos, sizeof(unsigned *));
+#ifdef DEBUG
         cout << "the " << i << "-th edge" << endl;
-
+#endif
         // BETTER: handle infrequent edge first to lower the size of d_result_tmp
         if (i == 0)
         {
             first_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_result_tmp_pos);
             cudaDeviceSynchronize();
             checkCudaErrors(cudaGetLastError());
+#ifdef DEBUG
             cout << "first kernel finished" << endl;
-
+#endif
             /*thrust::device_ptr<unsigned> dev_ptr(d_result_tmp_pos);*/
             /*thrust::exclusive_scan(dev_ptr, dev_ptr+result_row_num+1, dev_ptr);*/
             exclusive_sum(d_result_tmp_pos, result_row_num + 1);
 
             cudaMemcpy(&sum, &d_result_tmp_pos[result_row_num], sizeof(unsigned), cudaMemcpyDeviceToHost);
+#ifdef DEBUG
             cout << "To malloc on GPU: " << sizeof(unsigned) * sum << endl;
-            assert(sum < 2000000000); // keep the bytes < 8GB
+#endif
+            // assert(sum < 2000000000); // keep the bytes < 8GB
             cudaMalloc(&d_result_tmp, sizeof(unsigned) * sum);
             checkCudaErrors(cudaGetLastError());
             second_kernel<<<GRID_SIZE, BLOCK_SIZE>>>(d_result_tmp, d_result_tmp_num);
@@ -1348,13 +1352,16 @@ bool Match::join(unsigned *d_summary, int *link_pos, int *link_edge, int link_nu
         }
         cudaDeviceSynchronize();
         checkCudaErrors(cudaGetLastError());
+#ifdef DEBUG
         cout << "iteration kernel finished" << endl;
+#endif
         cudaFree(d_row_offset);
         cudaFree(d_column_index);
     }
     long end = Util::get_cur_time();
-    cerr << "join_kernel used: " << (end - begin) << "ms" << endl;
 #ifdef DEBUG
+    cerr << "join_kernel used: " << (end - begin) << "ms" << endl;
+
     cout << "join kernel finished" << endl;
 #endif
 
@@ -1464,13 +1471,14 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
     long t0 = Util::get_cur_time();
     copyGraphToGPU();
     long t1 = Util::get_cur_time();
-    cerr << "copy graph used: " << (t1 - t0) << "ms" << endl;
 #ifdef DEBUG
+    cerr << "copy graph used: " << (t1 - t0) << "ms" << endl;
+
     cout << "graph copied to GPU" << endl;
 #endif
 
     int qsize = this->query->vertex_num;
-    assert(qsize <= 12);
+    // assert(qsize <= 12);
     float *score = new float[qsize];
     /*float* d_score = NULL;*/
     /*cudaMalloc(&d_score, sizeof(float)*qsize);*/
@@ -1486,14 +1494,15 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
     /*cout<<"to filter"<<endl;*/
     bool success = filter(score, qnum);
     long t2 = Util::get_cur_time();
+#ifdef DEBUG
     cout << "filter used: " << (t2 - t1) << "ms" << endl;
+
     for (int i = 0; i < qsize; ++i)
     {
         cout << qnum[i] << " ";
     }
     cout << endl;
 
-#ifdef DEBUG
     cout << "filter finished" << endl;
 #endif
     if (!success)
@@ -1529,7 +1538,9 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
     cout << "candidates prepared" << endl;
 #endif
     long t3 = Util::get_cur_time();
+#ifdef DEBUG
     cerr << "build candidates used: " << (t3 - t2) << "ms" << endl;
+#endif
 
     // initialize the mapping structure
     this->id2pos = new int[qsize];
@@ -1545,34 +1556,39 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
     result_row_num = qnum[idx];
     result_col_num = 1;
     unsigned *d_result = this->candidates[idx];
+#ifdef DEBUG
     cout << "intermediate table built" << endl;
-
+#endif
     // NOTICE: the query graph is not so large, so we can analyse the join order in CPU(or use GPU for help)
     // each step build a new one and release the older
     for (int step = 1; step < qsize; ++step)
     {
-        /*#ifdef DEBUG*/
+#ifdef DEBUG
         cout << "this is the " << step << " round" << endl;
-        /*#endif*/
+#endif
 
         long t4 = Util::get_cur_time();
         // update the scores of query nodes
         update_score(score, qsize, idx);
         long t5 = Util::get_cur_time();
+#ifdef DEBUG
         cerr << "update score used: " << (t5 - t4) << "ms" << endl;
+#endif
         int idx2 = this->get_minimum_idx(score, qsize);
         long t6 = Util::get_cur_time();
+#ifdef DEBUG
         cerr << "get minimum idx used: " << (t6 - t5) << "ms" << endl;
-        /*#ifdef DEBUG*/
+
         cout << "next node to join: " << idx2 << " " << this->query->vertex_value[idx2] << " candidate size: " << qnum[idx2] << endl;
-        /*#endif*/
+#endif
 
         // acquire the edge linkings on CPU, and pass to GPU
         int *link_pos, *link_edge, link_num;
         this->acquire_linking(link_pos, link_edge, link_num, idx2);
         long t7 = Util::get_cur_time();
+#ifdef DEBUG
         cerr << "acquire linking used: " << (t7 - t6) << "ms" << endl;
-
+#endif
         long tmp1 = Util::get_cur_time();
         // build the bitset
         checkCudaErrors(cudaGetLastError());
@@ -1584,8 +1600,9 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
         cudaDeviceSynchronize();
         checkCudaErrors(cudaGetLastError());
         long tmp2 = Util::get_cur_time();
+#ifdef DEBUG
         cout << "candidate kernel used: " << (tmp2 - tmp1) << "ms" << endl;
-
+#endif
         // build summary which is placed in read-only cache: the summary is groups of 8B=64 bits
         /*cudaMemset(d_summary, 0, SUMMARY_BYTES);   //NOTICE: this is needed for each iteration*/
         // METHOD 1: bloom filter, two hash functions using MurmurHash2 with two seeds
@@ -1615,7 +1632,9 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
             break;
         }
         idx = idx2;
+#ifdef DEBUG
         cout << "intermediate table: " << result_row_num << " " << result_col_num << endl;
+#endif
     }
 
 #ifdef DEBUG
@@ -1644,7 +1663,9 @@ void Match::match(IO &io, unsigned *&final_result, unsigned &result_row_num, uns
 #endif
     checkCudaErrors(cudaFree(d_result));
     long t9 = Util::get_cur_time();
+#ifdef DEBUG
     cerr << "copy result used: " << (t9 - t8) << "ms" << endl;
+#endif
 #ifdef DEBUG
     checkCudaErrors(cudaGetLastError());
 #endif

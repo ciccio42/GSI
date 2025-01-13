@@ -1,33 +1,11 @@
 #!/bin/bash
-export CUDA_VISIBLE_DEVICES=3
+export CUDA_VISIBLE_DEVICES=1
 cd ../
 result1=result.log/
 file1=result
 rm -rf result.log/*.*
 
-QUERY_TARGET_NAMES=("star.g data.g")
-# "bvg1.sub.grf bvg1.grf"
-# "bvg1_2.sub.grf bvg1.grf"
-# "bvg1_3.sub.grf bvg1.grf"
-# "bvg1_4.sub.grf bvg1.grf"
-# "bvg2.sub.grf bvg2.grf"
-# "bvg3.sub.grf bvg3.grf"
-# "m2d1.sub.grf m2d1.grf"
-# "m2d2.sub.grf m2d2.grf"
-# "rand1.sub.grf rand1.grf"
-# "rand2.sub.grf rand2.grf"
-# "rand3.sub.grf rand3.grf"
-# "rand4.sub.grf rand4.grf"
-# "rnd_ldg1.sub.grf rnd_ldg1.grf"
-# "si2_b03_m400_37.sub.grf si2_b03_m400_37.grf"
-# "si2_b03_m1000_00.sub.grf si2_b03_m1000_00.grf"
-# "si2_b03m_m800_22.sub.grf si2_b03m_m800_22.grf"
-# "si2_b06m_m400_96.sub.grf si2_b06m_m400_96.grf"
-# "si2_b09_m400_37.sub.grf si2_b09_m400_01.grf"
-# "si2_r01_m200_00.sub.grf si2_r01_m200_00.grf"
-# "si2_r01_m1000_30.sub.grf si2_r01_m1000_30.grf"
-# "si2_rnd_eta04_m750_20.sub.grf si2_rnd_eta04_m750_20.grf"
-# "si2_rnd_eta04_m1000_00.sub.grf si2_rnd_eta04_m1000_00.grf")
+QUERY_TARGET_NAMES=("node_induced_connected_query_32.sub.grf data.grf" "node_induced_connected_query_16.sub.grf data.grf" "node_induced_connected_query_8.sub.grf data.grf" "node_induced_connected_query_32_64.sub.grf data_64.grf" "node_induced_connected_query_16_64.sub.grf data_64.grf" "node_induced_connected_query_8_64.sub.grf data_64.grf" "node_induced_connected_query_32_32.sub.grf data_32.grf" "node_induced_connected_query_16_32.sub.grf data_32.grf" "node_induced_connected_query_8_32.sub.grf data_32.grf" "node_induced_connected_query_32_16.sub.grf data_16.grf" "node_induced_connected_query_16_16.sub.grf data_16.grf" "node_induced_connected_query_8_16.sub.grf data_16.grf" "node_induced_connected_query_32_8.sub.grf data_8.grf" "node_induced_connected_query_16_8.sub.grf data_8.grf" "node_induced_connected_query_8_8.sub.grf data_8.grf" "node_induced_connected_query_32_4.sub.grf data_4.grf" "node_induced_connected_query_16_4.sub.grf data_4.grf" "node_induced_connected_query_8_4.sub.grf data_4.grf" "node_induced_connected_query_32_2.sub.grf data_2.grf" "node_induced_connected_query_16_2.sub.grf data_2.grf" "node_induced_connected_query_8_2.sub.grf data_2.grf")
 
 for i in "${QUERY_TARGET_NAMES[@]}"; do
     # Split the element into two parts
@@ -37,8 +15,8 @@ for i in "${QUERY_TARGET_NAMES[@]}"; do
     # Print the two strings
     echo "Query: $QUERY_NAME - Target string: $TARGET_NAME"
 
-    QUERY_TEST=data/${QUERY_NAME}
-    TARGET_TEST=data/${TARGET_NAME}
+    QUERY_TEST=/dataset/DBLP/GSI_format/${QUERY_NAME}
+    TARGET_TEST=/dataset/DBLP/GSI_format/${TARGET_NAME}
 
     ./GSI.exe ${TARGET_TEST} ${QUERY_TEST} ${result1}${file1}.txt 0
 
