@@ -261,3 +261,193 @@ maximum degree: 7
 time of preprocessing(not included in matching): 0 ms
 input ok!
 maximum degree: 343
+time of preprocessing(not included in matching): 1321 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 13 candidate size: 40
+Match returned: 258ms
+result: 552 8
+match used: 260 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 3275ms
+total time used: 3277ms
+
+######################################
+
+Query: node_induced_connected_query_32_8.sub.grf - Target string: data_8.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1317 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 22 2 candidate size: 168
+Match returned: 1348ms
+result: 8 32
+match used: 1348 ms
+match ended!
+part 1 used: 2ms
+part 2 used: 4278ms
+total time used: 4280ms
+
+######################################
+
+Query: node_induced_connected_query_16_8.sub.grf - Target string: data_8.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1361 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 6 candidate size: 395
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+
+Query: node_induced_connected_query_8_8.sub.grf - Target string: data_8.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1498 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 6 candidate size: 1017
+Match returned: 242ms
+result: 1040895 8
+match used: 2578 ms
+match ended!
+part 1 used: 3ms
+part 2 used: 6024ms
+total time used: 6027ms
+
+######################################
+
+Query: node_induced_connected_query_32_4.sub.grf - Target string: data_4.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1497 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 10 3 candidate size: 1159
+CUDA error at: match/Match.cu:1401
+out of memory cudaGetLastError()
+
+######################################
+
+Query: node_induced_connected_query_16_4.sub.grf - Target string: data_4.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1494 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 3 candidate size: 1285
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+
+Query: node_induced_connected_query_8_4.sub.grf - Target string: data_4.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1538 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 3 candidate size: 2991
+Match returned: 2215ms
+result: 74856277 8
+match used: 238482 ms
+match ended!
+part 1 used: 1ms
+part 2 used: 241762ms
+total time used: 241763ms
+
+######################################
+
+Query: node_induced_connected_query_32_2.sub.grf - Target string: data_2.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 21
+time of preprocessing(not included in matching): 1 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1466 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 22 0 candidate size: 12469
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+
+Query: node_induced_connected_query_16_2.sub.grf - Target string: data_2.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 15
+time of preprocessing(not included in matching): 0 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1541 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 1 candidate size: 12508
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+
+Query: node_induced_connected_query_8_2.sub.grf - Target string: data_2.grf
+Using device 0:
+Tesla V100-DGXS-32GB; global mem: 34077212672B; compute v7.0; clock: 1530000 kHz; shared mem: 49152B; block threads: 1024; SM count: 80
+GPU selected
+GPU warmup finished
+check heap limit: 8388608
+maximum degree: 7
+time of preprocessing(not included in matching): 1 ms
+input ok!
+maximum degree: 343
+time of preprocessing(not included in matching): 1492 ms
+data vertex num: 317080 bitset size: 39636B
+start node found: 7 1 candidate size: 15325
+CUDA error at: match/Match.cu:1354
+an illegal memory access was encountered cudaGetLastError()
+
+######################################
+
