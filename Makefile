@@ -35,7 +35,7 @@ CC = g++
 #opt-in to caching of global memory accesses in L1 via the -Xptxas -dlcm=ca option to nvcc
 #intermediate files, using --keep for nvcc
 #for PTX codes, using --ptx for nvcc
-NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true -G --ptxas-options=-v -lineinfo -Xcompiler -rdynamic -I ~/cudaToolkit/cub-1.8.0/
+NVCC = nvcc -arch=sm_61 -lcudadevrt -rdc=true --ptxas-options=-v -lineinfo -Xcompiler -fPIC -I /graph-matching-analysis/external_libray/cub-1.8.0/cub
 #NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true -G -Xcompiler -rdynamic -lineinfo
 #CFLAGS = -g -c #-fprofile-arcs -ftest-coverage -coverage #-pg
 #EXEFLAG = -g #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
