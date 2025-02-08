@@ -39,6 +39,11 @@ def convert(src_file_path, dest_file_path):
                 if edges_dict.get(int(line_elements[0]), None) is None:
                     edges_dict[int(line_elements[0])] = []
                 edges_dict[int(line_elements[0])].append(int(line_elements[1].split('\n')[0])) # src, dest
+
+                # DBPL is undirected graph, GSI uses directed edges
+                # if edges_dict.get(int(line_elements[1]), None) is None:
+                #     edges_dict[int(line_elements[1])] = []
+                # edges_dict[int(line_elements[1])].append(int(line_elements[0])) # dest, src
                 
     # print(edges_dict) 
     # start convertion

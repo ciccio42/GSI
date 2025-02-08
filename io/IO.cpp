@@ -129,16 +129,16 @@ bool
 IO::output(unsigned* final_result, unsigned result_row_num, unsigned result_col_num, int* id_map)
 {
     cout << "result: " << result_row_num << " " << result_col_num << endl;
-    int i, j, k;
-    for (i = 0; i < result_row_num; ++i) {
-        unsigned* ans = final_result + i * result_col_num;
-        for (j = 0; j < result_col_num; ++j) {
-            k = ans[id_map[j]];
-            fprintf(ofp, "(%u, %u) ", j, k);
-        }
-        fprintf(ofp, "\n");
-    }
-    fprintf(ofp, "\n\n\n");
+    // int i, j, k;
+    // for (i = 0; i < result_row_num; ++i) {
+    //     unsigned* ans = final_result + i * result_col_num;
+    //     for (j = 0; j < result_col_num; ++j) {
+    //         k = ans[id_map[j]];
+    //         fprintf(ofp, "(%u, %u) ", j, k);
+    //     }
+    //     fprintf(ofp, "\n");
+    // }
+    // fprintf(ofp, "\n\n\n");
     return true;
 }
 

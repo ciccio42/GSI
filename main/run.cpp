@@ -27,7 +27,7 @@ main(int argc, const char * argv[])
 	string output = "ans.txt";
 	if(argc > 5 || argc < 3)
 	{
-		cerr<<"invalid arguments!"<<endl;
+		cout<<"invalid arguments!"<<endl;
 		return -1;
 	}
 	string data = argv[1];
@@ -52,7 +52,7 @@ main(int argc, const char * argv[])
 	io.input(query_list);
 	int qnum = query_list.size();
 	
-	cerr<<"input ok!"<<endl;
+	// cout<<"input ok!"<<endl;
 	long t2 = Util::get_cur_time();
 
 	unsigned* final_result = NULL;
@@ -82,7 +82,7 @@ main(int argc, const char * argv[])
 			long tt1 = Util::get_cur_time();
 			m.match(io, final_result, result_row_num, result_col_num, id_map);
 			long tt2 = Util::get_cur_time();
-			cerr<<"Match returned: "<<(tt2-tt1)<<"ms"<<endl;
+			// cout<<"Match returned: "<<(tt2-tt1)<<"ms"<<endl;
 		/*getchar();*/
 			io.output(final_result, result_row_num, result_col_num, id_map);
 			io.flush();
@@ -96,18 +96,18 @@ main(int argc, const char * argv[])
 		//cudaDeviceReset();
 		}
         long end = Util::get_cur_time();
-        cerr<<"match used: "<<(end-start)<<" ms"<<endl;
+		cout << "match used: " << (end - start) << " ms" << endl;
 
 		delete data_graph;
 	}
 
-	cerr<<"match ended!"<<endl;
+	// cout<<"match ended!"<<endl;
 	long t3 = Util::get_cur_time();
 
 	//output the time for contrast
-	cerr<<"part 1 used: "<<(t2-t1)<<"ms"<<endl;
-	cerr<<"part 2 used: "<<(t3-t2)<<"ms"<<endl;
-	cerr<<"total time used: "<<(t3-t1)<<"ms"<<endl;
+	// cout<<"part 1 used: "<<(t2-t1)<<"ms"<<endl;
+	// cout<<"part 2 used: "<<(t3-t2)<<"ms"<<endl;
+	// cout<<"total time used: "<<(t3-t1)<<"ms"<<endl;
 	//getchar();
 
 	//release all and flush cached writes
