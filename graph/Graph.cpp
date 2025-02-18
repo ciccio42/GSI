@@ -30,6 +30,17 @@ Graph::addEdge(VID _from, VID _to, LABEL _elb)
 	this->vertices[_to].in.push_back(Neighbor(_from, _elb));
 }
 
+bool Graph::isEdgeContained(VID from, VID to, LABEL label){
+    vector<Neighbor> &out = this->vertices[from].out;
+    for (int i = 0; i < out.size(); ++i)
+    {
+        if (out[i].vid == to && out[i].elb == label)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 void 
 Graph::preprocessing(bool column_oriented)

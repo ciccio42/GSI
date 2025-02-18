@@ -20,10 +20,12 @@ public:
 	bool input(std::vector<Graph*>& query_list);
 	bool input(Graph*& data_graph);
 	Graph* input(FILE* fp);
+	bool verify(int *id_map, unsigned *ans, unsigned num, Graph *query, Graph *data);
 	bool output(int qid);
 	bool output();
 	bool output(unsigned* final_result, unsigned result_row_num, unsigned result_col_num, int* id_map);
-	bool output(int* m, int size);
+	bool output(unsigned *final_result, unsigned result_row_num, unsigned result_col_num, int *id_map, Graph *query_graph, Graph *data_graph, bool verify_flag);
+	bool output(int *m, int size);
 	void flush();
 	~IO();
 private:

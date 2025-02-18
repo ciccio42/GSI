@@ -111,8 +111,8 @@ public:
 	std::vector<Vertex> vertices;
 	void addVertex(LABEL _vlb);
 	void addEdge(VID _from, VID _to, LABEL _elb);
-
-    unsigned vertexLabelNum, edgeLabelNum;
+	bool isEdgeContained(VID from, VID to, LABEL label);
+	unsigned vertexLabelNum, edgeLabelNum;
 	//CSR format: 4 pointers
 	unsigned vertex_num;
 	unsigned* vertex_value;

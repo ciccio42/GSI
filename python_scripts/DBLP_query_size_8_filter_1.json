@@ -1,0 +1,3406 @@
+{
+    "8": {
+        "0": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.69
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 55,
+                "running_time": 1.852
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 240233,
+                "running_time": 182.031
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 18175336,
+                "running_time": 1355.708
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "1": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.744
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.342
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 155723,
+                "running_time": 160.325
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 17569846,
+                "running_time": 1081.636
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "2": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.362
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 33,
+                "running_time": 1.153
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 28983,
+                "running_time": 3.021
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 14216126,
+                "running_time": 628.871
+            },
+            "8": {
+                "success": 1,
+                "num_sol": 10059214,
+                "running_time": 84.643
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "3": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.112
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 577,
+                "running_time": 19.299
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 61335,
+                "running_time": 46.716
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 7193266,
+                "running_time": 809.16
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "4": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.484
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 721,
+                "running_time": 5.691
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 313888,
+                "running_time": 37.638
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 23995975,
+                "running_time": 1122.322
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "5": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.135
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 8,
+                "running_time": 0.588
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 13824,
+                "running_time": 26.095
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 12026460,
+                "running_time": 1945.83
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "6": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.559
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 122,
+                "running_time": 4.462
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 21619,
+                "running_time": 2054.76
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5471134,
+                "running_time": 120.859
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "7": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.479
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 3,
+                "running_time": 0.644
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 57951,
+                "running_time": 11.802
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 12143036,
+                "running_time": 468.477
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "8": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.599
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 578,
+                "running_time": 10.853
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 162518,
+                "running_time": 18.106
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 11109911,
+                "running_time": 261.684
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "9": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.705
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.412
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.413
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3574499,
+                "running_time": 74.576
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "10": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.542
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 433,
+                "running_time": 1.503
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 35585,
+                "running_time": 307.542
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6102371,
+                "running_time": 1469.682
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "11": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.613
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.425
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 7202,
+                "running_time": 80.215
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2174024,
+                "running_time": 66.472
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "12": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.714
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 49,
+                "running_time": 0.349
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 5839,
+                "running_time": 19.52
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 19796916,
+                "running_time": 1232.145
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "13": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.626
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.297
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 33926,
+                "running_time": 7.208
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3681316,
+                "running_time": 136.148
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "14": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.637
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 193,
+                "running_time": 4.491
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 25321,
+                "running_time": 13.781
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5144546,
+                "running_time": 1185.407
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "15": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.324
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.443
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 28538,
+                "running_time": 7.016
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 23230557,
+                "running_time": 2129.218
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "16": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.498
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.624
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 3974,
+                "running_time": 3.334
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 4145217,
+                "running_time": 349.312
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "17": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.438
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.315
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 31407,
+                "running_time": 35.71
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1967464,
+                "running_time": 151.669
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "18": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.423
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.227
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 1393,
+                "running_time": 11.947
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2527954,
+                "running_time": 90.163
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "19": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.295
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.146
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 47413,
+                "running_time": 6.118
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 21558608,
+                "running_time": 689.64
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "20": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.696
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 73,
+                "running_time": 2.416
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 16795,
+                "running_time": 53.251
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2411570,
+                "running_time": 196.98
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "21": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.595
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 2.348
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 140173,
+                "running_time": 226.937
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 8732606,
+                "running_time": 946.808
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "22": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.853
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.443
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 2060,
+                "running_time": 12.897
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 4233934,
+                "running_time": 102.695
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "23": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.194
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 22,
+                "running_time": 0.92
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 15652,
+                "running_time": 273.45
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 11204866,
+                "running_time": 1447.642
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "24": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.776
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 242,
+                "running_time": 2.702
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 362882,
+                "running_time": 113.184
+            },
+            "16": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "25": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.743
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 361,
+                "running_time": 1.441
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 226807,
+                "running_time": 50.611
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 40245585,
+                "running_time": 2561.675
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "26": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.841
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 578,
+                "running_time": 20.138
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 98788,
+                "running_time": 520.693
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5389090,
+                "running_time": 154.414
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "27": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.465
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.314
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 24098,
+                "running_time": 97.932
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2105690,
+                "running_time": 23.843
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "28": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.524
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 865,
+                "running_time": 2.371
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 342570,
+                "running_time": 30.961
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 56310130,
+                "running_time": 2328.771
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "29": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.449
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.231
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 5423,
+                "running_time": 4.454
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3505548,
+                "running_time": 91.353
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "30": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 2.272
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 324,
+                "running_time": 1.89
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 79370,
+                "running_time": 433.241
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6331986,
+                "running_time": 551.915
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "31": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.465
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 13,
+                "running_time": 0.834
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 6644,
+                "running_time": 5.392
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3860433,
+                "running_time": 504.825
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "32": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.505
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.25
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 2151,
+                "running_time": 8.146
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 900911,
+                "running_time": 32.345
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "33": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.94
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 97,
+                "running_time": 0.769
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 154689,
+                "running_time": 190.562
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 12663548,
+                "running_time": 3351.477
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "34": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.589
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.584
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 24254,
+                "running_time": 24.99
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6886472,
+                "running_time": 440.977
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "35": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.768
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.726
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 177910,
+                "running_time": 72.661
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 12543902,
+                "running_time": 663.538
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "36": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.549
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.29
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 42780,
+                "running_time": 54.008
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 11826319,
+                "running_time": 915.058
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "37": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.442
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.274
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 279,
+                "running_time": 0.592
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 350715,
+                "running_time": 56.451
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "38": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.148
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.578
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 2486,
+                "running_time": 8.51
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2132300,
+                "running_time": 242.771
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "39": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 5.336
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 72,
+                "running_time": 1.893
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 51848,
+                "running_time": 145.978
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5067688,
+                "running_time": 155.861
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "40": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.62
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 264,
+                "running_time": 13.567
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 125542,
+                "running_time": 154.24
+            },
+            "16": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "41": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.537
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 193,
+                "running_time": 40.548
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 31550,
+                "running_time": 105.557
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 12825526,
+                "running_time": 945.803
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "42": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.526
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 14,
+                "running_time": 1.332
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 51848,
+                "running_time": 330.901
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 4409592,
+                "running_time": 224.728
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "43": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.598
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 962,
+                "running_time": 9.106
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 66987,
+                "running_time": 270.145
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6412665,
+                "running_time": 1072.887
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "44": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.558
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 121,
+                "running_time": 0.517
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 69715,
+                "running_time": 61.144
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 18615818,
+                "running_time": 844.487
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "45": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.659
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.284
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 19500,
+                "running_time": 154.063
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5909925,
+                "running_time": 181.354
+            },
+            "8": {
+                "success": 1,
+                "num_sol": 92195867,
+                "running_time": 2457.907
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "46": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.921
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 97,
+                "running_time": 0.751
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 21000,
+                "running_time": 73.932
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 16095500,
+                "running_time": 1039.931
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "47": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.389
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 146,
+                "running_time": 12.539
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 10077,
+                "running_time": 0.895
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 8425140,
+                "running_time": 291.964
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "48": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.938
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 48,
+                "running_time": 0.578
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 5832,
+                "running_time": 52.632
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2737302,
+                "running_time": 66.942
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "49": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.588
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.331
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 1207,
+                "running_time": 18.897
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1336543,
+                "running_time": 42.49
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "50": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.59
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 73,
+                "running_time": 2.446
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 5189,
+                "running_time": 28.353
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 4183328,
+                "running_time": 273.391
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "51": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.572
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.284
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 40503,
+                "running_time": 40.058
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 7703072,
+                "running_time": 433.166
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "52": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.893
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.442
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 3620,
+                "running_time": 40.273
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 392788,
+                "running_time": 45.68
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "53": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.997
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 24,
+                "running_time": 0.576
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 3420,
+                "running_time": 2.31
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3940004,
+                "running_time": 302.137
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "54": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.238
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.224
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 17890,
+                "running_time": 6.001
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 30218398,
+                "running_time": 1530.848
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "55": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.406
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 93,
+                "running_time": 0.994
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 213931,
+                "running_time": 91.156
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 20474937,
+                "running_time": 1712.576
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "56": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.459
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.208
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 3229,
+                "running_time": 666.757
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 723038,
+                "running_time": 24.393
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "57": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.361
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 565,
+                "running_time": 12.108
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 29603,
+                "running_time": 39.492
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2428597,
+                "running_time": 152.605
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "58": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.561
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 42,
+                "running_time": 1.536
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 3704,
+                "running_time": 9.323
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1029864,
+                "running_time": 73.188
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "59": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.065
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 4,
+                "running_time": 0.565
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 480,
+                "running_time": 1.262
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 9536976,
+                "running_time": 615.818
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "60": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.607
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.303
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 929,
+                "running_time": 9.075
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 4850592,
+                "running_time": 693.636
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "61": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.223
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.578
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 18200,
+                "running_time": 17.24
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 964088,
+                "running_time": 51.477
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "62": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.801
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.498
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 25690,
+                "running_time": 6.649
+            },
+            "16": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "63": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 7.1
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 288,
+                "running_time": 3.771
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 102752,
+                "running_time": 159.471
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 8692178,
+                "running_time": 261.794
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "64": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.458
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 10,
+                "running_time": 0.749
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 7881,
+                "running_time": 413.334
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3608641,
+                "running_time": 576.611
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "65": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.655
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.284
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 29537,
+                "running_time": 13.933
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 24649910,
+                "running_time": 1008.663
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "66": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.735
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.399
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 6841,
+                "running_time": 2.455
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5392976,
+                "running_time": 700.786
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "67": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.686
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.318
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 1332,
+                "running_time": 24.12
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1115258,
+                "running_time": 96.353
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "68": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.763
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.38
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 17860,
+                "running_time": 123.103
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 16038954,
+                "running_time": 814.07
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "69": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.414
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.205
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 41368,
+                "running_time": 22.535
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 12860716,
+                "running_time": 1905.442
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "70": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.754
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 2.212
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 42981,
+                "running_time": 198.376
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 11260375,
+                "running_time": 1445.449
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "71": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.754
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.344
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 13691,
+                "running_time": 29.488
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2717499,
+                "running_time": 456.485
+            },
+            "8": {
+                "success": 1,
+                "num_sol": 4279392,
+                "running_time": 448.685
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "72": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.689
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 4,
+                "running_time": 0.264
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 4448,
+                "running_time": 72.732
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1472063,
+                "running_time": 99.666
+            },
+            "8": {
+                "success": 1,
+                "num_sol": 35978716,
+                "running_time": 1867.838
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "73": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.861
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 164,
+                "running_time": 1.411
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 27458,
+                "running_time": 32.895
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 7696099,
+                "running_time": 570.129
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "74": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.701
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.321
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 87210,
+                "running_time": 334.207
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6873586,
+                "running_time": 1116.483
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "75": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 7.134
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 612,
+                "running_time": 0.92
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 56208,
+                "running_time": 76.236
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 8865012,
+                "running_time": 724.373
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "76": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.954
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.451
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 6168,
+                "running_time": 12.999
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 899604,
+                "running_time": 282.824
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "77": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.629
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.307
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 4877,
+                "running_time": 40.923
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6185072,
+                "running_time": 103.64
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "78": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.568
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 3,
+                "running_time": 0.288
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 54,
+                "running_time": 0.797
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2542576,
+                "running_time": 174.989
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "79": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.421
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.281
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 67247,
+                "running_time": 69.564
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 10684960,
+                "running_time": 536.213
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "80": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.036
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.447
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 7270,
+                "running_time": 83.386
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 15387598,
+                "running_time": 2507.827
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "Timeout"
+            }
+        },
+        "81": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.473
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.223
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 574,
+                "running_time": 0.743
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6605425,
+                "running_time": 189.08
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "82": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.364
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 25,
+                "running_time": 0.227
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 30254,
+                "running_time": 21.219
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 8237940,
+                "running_time": 813.14
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "83": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.03
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 866,
+                "running_time": 0.64
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 23810,
+                "running_time": 86.236
+            },
+            "16": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "84": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.377
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 29,
+                "running_time": 0.186
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 7982,
+                "running_time": 104.618
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2005464,
+                "running_time": 94.135
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "85": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.486
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.228
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 5045,
+                "running_time": 18.046
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1350480,
+                "running_time": 123.027
+            },
+            "8": {
+                "success": 1,
+                "num_sol": 330478,
+                "running_time": 5.888
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "86": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.774
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.343
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 1442,
+                "running_time": 6.803
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 1105676,
+                "running_time": 66.209
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "87": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.202
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 870,
+                "running_time": 233.308
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 30114,
+                "running_time": 34.698
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 11989316,
+                "running_time": 839.264
+            },
+            "8": {
+                "success": 0,
+                "error_info": "Timeout"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "88": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.622
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.309
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 118,
+                "running_time": 3.987
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 879554,
+                "running_time": 180.519
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "89": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.597
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 361,
+                "running_time": 0.521
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 45047,
+                "running_time": 29.119
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 7122026,
+                "running_time": 173.504
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "90": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.727
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.397
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 27313,
+                "running_time": 53.142
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 6645497,
+                "running_time": 195.452
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "91": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.512
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 241,
+                "running_time": 11.348
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 277586,
+                "running_time": 52.907
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 21427405,
+                "running_time": 510.511
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "92": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.434
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.538
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 18904,
+                "running_time": 5.637
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5955047,
+                "running_time": 93.371
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "93": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.649
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.316
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 7,
+                "running_time": 0.847
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 593384,
+                "running_time": 61.509
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "94": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.52
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 9,
+                "running_time": 0.363
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 8902,
+                "running_time": 7.044
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 2579030,
+                "running_time": 98.61
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "95": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.554
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 3,
+                "running_time": 0.336
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 2861,
+                "running_time": 29.858
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3932538,
+                "running_time": 119.981
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1339\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "96": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 1.219
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.566
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 4368,
+                "running_time": 15.504
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 3404412,
+                "running_time": 219.318
+            },
+            "8": {
+                "success": 0,
+                "error_info": ""
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "97": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.356
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 12,
+                "running_time": 0.371
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 15996,
+                "running_time": 3.686
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 7028424,
+                "running_time": 349.513
+            },
+            "8": {
+                "success": 1,
+                "num_sol": 34501939,
+                "running_time": 1652.893
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        },
+        "98": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.168
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.164
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 13064,
+                "running_time": 23.491
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 18182491,
+                "running_time": 318.989
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1401\nout of memory cudaGetLastError()\n"
+            }
+        },
+        "99": {
+            "original_labels": {
+                "success": 1,
+                "num_sol": 1,
+                "running_time": 0.564
+            },
+            "64": {
+                "success": 1,
+                "num_sol": 2,
+                "running_time": 0.568
+            },
+            "32": {
+                "success": 1,
+                "num_sol": 9408,
+                "running_time": 63.251
+            },
+            "16": {
+                "success": 1,
+                "num_sol": 5613783,
+                "running_time": 1120.636
+            },
+            "8": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "4": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            },
+            "2": {
+                "success": 0,
+                "error_info": "CUDA error at: match/Match.cu:1354\nan illegal memory access was encountered cudaGetLastError()\n"
+            }
+        }
+    }
+}

@@ -1,2 +1,0 @@
-CUDA error at: match/Match.cu:1354
-an illegal memory access was encountered cudaGetLastError()

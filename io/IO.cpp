@@ -125,22 +125,124 @@ IO::output()
     return true;
 }
 
-bool
-IO::output(unsigned* final_result, unsigned result_row_num, unsigned result_col_num, int* id_map)
+// BETTER: move the process of verifying to the GPU(full CSR of the data graph is required)
+bool IO::verify(int *id_map, unsigned *ans, unsigned num, Graph *query, Graph *data)
 {
-    cout << "result: " << result_row_num << " " << result_col_num << endl;
-    // int i, j, k;
-    // for (i = 0; i < result_row_num; ++i) {
-    //     unsigned* ans = final_result + i * result_col_num;
-    //     for (j = 0; j < result_col_num; ++j) {
-    //         k = ans[id_map[j]];
-    //         fprintf(ofp, "(%u, %u) ", j, k);
-    //     }
-    //     fprintf(ofp, "\n");
-    // }
-    // fprintf(ofp, "\n\n\n");
+    // check isomorphism
+    set<unsigned> uniq_set;
+    for (int i = 0; i < num; ++i)
+    {
+        if (uniq_set.find(ans[i]) != uniq_set.end())
+        {
+#ifdef DEBUG
+            // cout<<"not unique "<<ans[i]<<endl;
+#endif
+            return false;
+        }
+        uniq_set.insert(ans[i]);
+    }
+
+    // enumerate each edge in the query graph to check if this is a valid mapping
+    vector<Vertex> &qvlist = query->vertices;
+    for (int i = 0; i < qvlist.size(); ++i)
+    {
+        // NOTICE: we only need to check all incoming edges to avoid duplicates
+        vector<Neighbor> &in = qvlist[i].in;
+        for (int j = 0; j < in.size(); ++j)
+        {
+            int to = ans[id_map[i]];
+            int from = ans[id_map[in[j].vid]];
+            int label = in[j].elb;
+            bool flag = data->isEdgeContained(from, to, label);
+            if (!flag)
+            {
+                return false;
+            }        
+        }
+    }
+
+    vector<Vertex> &dvlist = data->vertices;
+    int data_indx;
+    for (int j = 0; j < num; j++)
+    {
+        data_indx = ans[id_map[j]];
+        if (data_indx >= dvlist.size())
+        {
+            return false;
+        }
+        Vertex &v = dvlist[data_indx];
+        Vertex &q = qvlist[j];
+        if (q.label != v.label)
+        {
+            return false;
+        }
+    }
+
+        return true;
+}
+
+bool IO::output(unsigned *final_result, unsigned result_row_num, unsigned result_col_num, int *id_map, Graph *query_graph, Graph *data_graph, bool verify_flag)
+{
+    long begin = Util::get_cur_time();
+    unsigned initial_sol_num = result_row_num;
+    //    cout<<"result: "<<result_row_num<<" "<<result_col_num<<endl;
+    
+    if (verify_flag)
+    {
+        int i, j, k;
+        for (i = 0; i < result_row_num; ++i)
+        {
+            unsigned *ans = final_result + i * result_col_num;
+#ifdef DEBUG
+            // cout<<ans[id_map[0]]<<" "<<ans[id_map[1]]<<" "<<ans[id_map[2]]<<endl;
+//        if(ans[0] == 44 && ans[1] == 36 && ans[2] == 2310)
+//        {
+//            cout<<"found in output!"<<endl;
+//        }
+#endif
+            bool valid = verify(id_map, ans, result_col_num, query_graph, data_graph);
+            if (!valid)
+            {
+#ifdef DEBUG
+                // cout<<"a result is invalid!"<<endl;
+#endif
+                initial_sol_num -= 1;
+                continue;
+            }
+
+            // for (j = 0; j < result_col_num; ++j)
+            // {
+            //     k = ans[id_map[j]];
+            //     fprintf(ofp, "(%u, %u) ", j, k);
+            // }
+            // fprintf(ofp, "\n");
+        }
+        // fprintf(ofp, "\n\n\n");
+    }
+    
+
+    long end = Util::get_cur_time();
+    cout << "output used " << end - begin << " ms" << endl;
+    cout << "result: " << initial_sol_num << " " << result_col_num << endl;
     return true;
 }
+
+// bool
+// IO::output(unsigned* final_result, unsigned result_row_num, unsigned result_col_num, int* id_map)
+// {
+//     cout << "result: " << result_row_num << " " << result_col_num << endl;
+//     // int i, j, k;
+//     // for (i = 0; i < result_row_num; ++i) {
+//     //     unsigned* ans = final_result + i * result_col_num;
+//     //     for (j = 0; j < result_col_num; ++j) {
+//     //         k = ans[id_map[j]];
+//     //         fprintf(ofp, "(%u, %u) ", j, k);
+//     //     }
+//     //     fprintf(ofp, "\n");
+//     // }
+//     // fprintf(ofp, "\n\n\n");
+//     return true;
+// }
 
 bool
 IO::output(int* m, int size)

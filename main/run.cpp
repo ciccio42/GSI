@@ -25,7 +25,7 @@ main(int argc, const char * argv[])
 	int i;
 
 	string output = "ans.txt";
-	if(argc > 5 || argc < 3)
+	if(argc > 6 || argc < 3)
 	{
 		cout<<"invalid arguments!"<<endl;
 		return -1;
@@ -40,6 +40,12 @@ main(int argc, const char * argv[])
 	if(argc == 5)
 	{
 		dev = atoi(argv[4]);
+	}
+
+	bool verify = true;
+	if (argc == 6)
+	{
+		verify = atoi(argv[5]);
 	}
 
 	//set the GPU and warmup
@@ -84,7 +90,7 @@ main(int argc, const char * argv[])
 			long tt2 = Util::get_cur_time();
 			// cout<<"Match returned: "<<(tt2-tt1)<<"ms"<<endl;
 		/*getchar();*/
-			io.output(final_result, result_row_num, result_col_num, id_map);
+			io.output(final_result, result_row_num, result_col_num, id_map, query_list[i], data_graph, verify);
 			io.flush();
 			delete[] final_result;
 			/*delete[] id_map;*/

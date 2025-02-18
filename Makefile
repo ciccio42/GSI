@@ -43,7 +43,7 @@ NVCC = nvcc -arch=sm_61 -lcudadevrt -rdc=true --ptxas-options=-v -lineinfo -Xcom
 #EXEFLAG = -g #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
 #NVCC = nvcc -arch=sm_35 -lcudadevrt -rdc=true 
 #CFLAGS = -c #-fprofile-arcs -ftest-coverage -coverage #-pg
-CFLAGS = -c -O0 -g #-fprofile-arcs -ftest-coverage -coverage #-pg
+CFLAGS = -c -O0 #-fprofile-arcs -ftest-coverage -coverage #-pg
 EXEFLAG = -O0 #-fprofile-arcs -ftest-coverage -coverage #-pg #-O2
 # BETTER: try -fno-builtin-strlen -funswitch-loops -finline-functions
 
@@ -53,10 +53,10 @@ library = #-lgcov -coverage
 objdir = ./objs/
 objfile = $(objdir)Util.o $(objdir)IO.o $(objdir)Match.o $(objdir)Graph.o
 
-all: GSI.exe
+all: GSI_filter.exe
 
-GSI.exe: $(objfile) main/run.cpp
-	$(NVCC) $(EXEFLAG) -g -o GSI.exe main/run.cpp $(objfile)
+GSI_filter.exe: $(objfile) main/run.cpp
+	$(NVCC) $(EXEFLAG) -g -o GSI_filter.exe main/run.cpp $(objfile)
 
 $(objdir)Util.o: util/Util.cpp util/Util.h
 	$(CC) $(CFLAGS) util/Util.cpp -o $(objdir)Util.o

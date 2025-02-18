@@ -104,6 +104,7 @@ if __name__ == '__main__':
                 
     # validate solution
     
+    val_solu = len(solution_dict.keys())
     for sol_indx in solution_dict.keys():
         print(f"Validate solution {sol_indx}")
         for query_indx in solution_dict[sol_indx].keys():
@@ -112,7 +113,10 @@ if __name__ == '__main__':
             
             # Cond 1 node labels
             if query_map_node_idx_to_label[query_indx] != data_map_node_idx_to_label[data_indx]:
-                print(f"Solution {sol_indx}: \n\tQuery node {query_indx} has label {query_map_node_idx_to_label[query_indx]} while data node {data_indx} has label {data_map_node_idx_to_label[data_indx]}")
-                
+                # print(f"Solution {sol_indx}: \n\tQuery node {query_indx} has label {query_map_node_idx_to_label[query_indx]} while data node {data_indx} has label {data_map_node_idx_to_label[data_indx]}")
+                val_solu -= 1
+                continue
             # Cond 2 (edge existence)
+    
+    print("Validation complete - Number of valid solutions: ", val_solu)
             
