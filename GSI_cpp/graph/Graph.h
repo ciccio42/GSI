@@ -111,6 +111,10 @@ public:
 	std::vector<Vertex> vertices;
 	void addVertex(LABEL _vlb);
 	void addEdge(VID _from, VID _to, LABEL _elb);
+	
+    // Setter functions
+    void setVertexLabelNum(unsigned num);
+    void setEdgeLabelNum(unsigned num);
 
     unsigned vertexLabelNum, edgeLabelNum;
 	//CSR format: 4 pointers
@@ -203,6 +207,7 @@ public:
 		//out_neighbor_num = this->edge_offset_out[row_offset_out[id+1]] - out_neighbor_offset;
 	//}
     unsigned countMaxDegree();
+
 };
 
 #endif
